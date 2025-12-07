@@ -1,53 +1,52 @@
-================================================================================
-              ATIVIDADE PRÁTICA: SISTEMA DE GERENCIAMENTO DE NOTAS
-================================================================================
+# 📚 Sistema de Gerenciamento de Notas de Alunos
 
-Disciplina: Programação em Python
-Tema: Algoritmos, Fluxogramas, Variáveis, Operadores, Estruturas de Controle
-      e Estruturas de Dados (Listas, Tuplas, Dicionários)
+**Disciplina:** Programação em Python  
+**Tema:** Algoritmos, Fluxogramas, Variáveis, Operadores, Estruturas de Controle e Estruturas de Dados (Listas, Tuplas, Dicionários)
 
-================================================================================
-                              1. OBJETIVO
-================================================================================
+---
 
-O objetivo desta atividade é desenvolver um sistema de gerenciamento de notas
-para uma turma de alunos, aplicando os seguintes conceitos:
+## 1. Objetivo
 
-  • Dicionários
-  • Listas
-  • Loops (while e for)
-  • Estruturas condicionais (if, elif, else)
-  • Funções de entrada/saída (input, print)
-  • Operadores aritméticos e de comparação
+O objetivo desta atividade é desenvolver um sistema de gerenciamento de notas para uma turma de alunos, aplicando os seguintes conceitos:
 
-================================================================================
-                         2. DESCRIÇÃO DO PROBLEMA
-================================================================================
+- Dicionários
+- Listas
+- Loops (while e for)
+- Estruturas condicionais (if, elif, else)
+- Funções de entrada/saída (input, print)
+- Operadores aritméticos e de comparação
+
+---
+
+## 2. Descrição do Problema
 
 O programa deve realizar as seguintes operações:
 
-  1. LEITURA E ARMAZENAMENTO DOS DADOS
-     - Ler o nome de N alunos e suas respectivas notas
-     - Armazenar em um dicionário onde:
-       * Chave: nome do aluno (string)
-       * Valor: lista contendo as notas [N1, N2]
+### 2.1 Leitura e Armazenamento dos Dados
+- Ler o nome de N alunos e suas respectivas notas
+- Armazenar em um dicionário onde:
+  - **Chave:** nome do aluno (string)
+  - **Valor:** lista contendo as notas [N1, N2]
 
-  2. CÁLCULO DA MÉDIA
-     - Calcular a média final de cada aluno usando a fórmula:
-       Média = (N1 + N2) / 2
+### 2.2 Cálculo da Média
+- Calcular a média final de cada aluno usando a fórmula:
+  - `Média = (N1 + N2) / 2`
 
-  3. DETERMINAÇÃO DA SITUAÇÃO
-     - Aprovado: Média >= 60
-     - Sub:      Média >= 30 e Média < 60
-     - Reprovado: Média < 30
+### 2.3 Determinação da Situação
+| Situação | Condição |
+|----------|----------|
+| Aprovado | Média >= 60 |
+| Sub | Média >= 30 e Média < 60 |
+| Reprovado | Média < 30 |
 
-  4. EXIBIÇÃO DOS RESULTADOS
-     - Imprimir nome, notas, média e situação de cada aluno
+### 2.4 Exibição dos Resultados
+- Imprimir nome, notas, média e situação de cada aluno
 
-================================================================================
-                           3. FLUXOGRAMA
-================================================================================
+---
 
+## 3. Fluxograma
+
+```
                               ┌─────────┐
                               │  INÍCIO │
                               └────┬────┘
@@ -135,11 +134,13 @@ O programa deve realizar as seguintes operações:
                                          ┌──────────┐
                                          │   FIM    │
                                          └──────────┘
+```
 
-================================================================================
-                         4. CÓDIGO FONTE EM PYTHON
-================================================================================
+---
 
+## 4. Código Fonte em Python
+
+```python
 # =============================================================================
 # Sistema de Gerenciamento de Notas de Alunos
 # =============================================================================
@@ -226,82 +227,89 @@ print(f"Total de Alunos: {n}")
 print(f"Aprovados: {aprovados}")
 print(f"Em Sub: {sub}")
 print(f"Reprovados: {reprovados}")
+```
 
-================================================================================
-                      5. EXPLICAÇÃO DOS CONCEITOS
-================================================================================
+---
 
-5.1. VARIÁVEIS UTILIZADAS
---------------------------------------------------------------------------------
-| Variável       | Tipo        | Descrição                                    |
-|----------------|-------------|----------------------------------------------|
-| dados_alunos   | dict        | Dicionário que armazena todos os alunos      |
-| n              | int         | Quantidade de alunos a cadastrar             |
-| nome           | str         | Nome do aluno (chave do dicionário)          |
-| nota1, nota2   | float       | Notas do aluno                               |
-| notas          | list        | Lista contendo [nota1, nota2]                |
-| media          | float       | Média calculada do aluno                     |
-| situacao       | str         | Situação final (Aprovado/Sub/Reprovado)      |
-| aprovados      | int         | Contador de alunos aprovados                 |
-| reprovados     | int         | Contador de alunos reprovados                |
-| sub            | int         | Contador de alunos em sub                    |
---------------------------------------------------------------------------------
+## 5. Explicação dos Conceitos
 
-5.2. ESTRUTURAS DE DADOS
---------------------------------------------------------------------------------
-DICIONÁRIO (dict):
-  - Estrutura que armazena pares chave:valor
-  - Exemplo: dados_alunos = {"João": [7.5, 8.0], "Maria": [9.0, 8.5]}
-  - Método .items() retorna tuplas (chave, valor) para iteração
+### 5.1 Variáveis Utilizadas
 
-LISTA (list):
-  - Estrutura ordenada e mutável
-  - Usada para armazenar as notas: [nota1, nota2]
-  - Acesso por índice: notas[0], notas[1]
+| Variável | Tipo | Descrição |
+|----------|------|-----------|
+| `dados_alunos` | dict | Dicionário que armazena todos os alunos |
+| `n` | int | Quantidade de alunos a cadastrar |
+| `nome` | str | Nome do aluno (chave do dicionário) |
+| `nota1`, `nota2` | float | Notas do aluno |
+| `notas` | list | Lista contendo [nota1, nota2] |
+| `media` | float | Média calculada do aluno |
+| `situacao` | str | Situação final (Aprovado/Sub/Reprovado) |
+| `aprovados` | int | Contador de alunos aprovados |
+| `reprovados` | int | Contador de alunos reprovados |
+| `sub` | int | Contador de alunos em sub |
 
-5.3. OPERADORES
---------------------------------------------------------------------------------
-ARITMÉTICOS:
-  + (adição)      : nota1 + nota2
-  / (divisão)     : (nota1 + nota2) / 2
-  * (multiplicação): "=" * 50 (repetição de string)
+### 5.2 Estruturas de Dados
 
-COMPARAÇÃO:
-  >= (maior ou igual): media >= 60
-  <  (menor que)     : media < 30
+**DICIONÁRIO (dict):**
+- Estrutura que armazena pares chave:valor
+- Exemplo: `dados_alunos = {"João": [7.5, 8.0], "Maria": [9.0, 8.5]}`
+- Método `.items()` retorna tuplas (chave, valor) para iteração
 
-ATRIBUIÇÃO:
-  =  (atribuição simples)  : dados_alunos = {}
-  += (atribuição composta) : aprovados += 1
+**LISTA (list):**
+- Estrutura ordenada e mutável
+- Usada para armazenar as notas: `[nota1, nota2]`
+- Acesso por índice: `notas[0]`, `notas[1]`
 
-5.4. ESTRUTURAS DE CONTROLE
---------------------------------------------------------------------------------
-LOOP FOR:
-  - Usado para iterar um número determinado de vezes
-  - for i in range(n): itera de 0 até n-1
-  - for nome, notas in dados_alunos.items(): itera sobre o dicionário
+### 5.3 Operadores
 
-CONDICIONAL IF-ELIF-ELSE:
-  - Permite executar blocos de código baseado em condições
-  - if: primeira condição
-  - elif: condições alternativas
-  - else: caso nenhuma condição anterior seja verdadeira
+**Aritméticos:**
+| Operador | Descrição | Exemplo |
+|----------|-----------|---------|
+| `+` | Adição | `nota1 + nota2` |
+| `/` | Divisão | `(nota1 + nota2) / 2` |
+| `*` | Multiplicação | `"=" * 50` (repetição de string) |
 
-5.5. FUNÇÕES DE ENTRADA/SAÍDA
---------------------------------------------------------------------------------
-input(mensagem):
-  - Lê dados do teclado
-  - Retorna sempre uma string
-  - Deve ser convertido: int(input(...)) ou float(input(...))
+**Comparação:**
+| Operador | Descrição | Exemplo |
+|----------|-----------|---------|
+| `>=` | Maior ou igual | `media >= 60` |
+| `<` | Menor que | `media < 30` |
 
-print(valor):
-  - Exibe dados na tela
-  - f-strings permitem formatação: f"Média: {media:.2f}"
+**Atribuição:**
+| Operador | Descrição | Exemplo |
+|----------|-----------|---------|
+| `=` | Atribuição simples | `dados_alunos = {}` |
+| `+=` | Atribuição composta | `aprovados += 1` |
 
-================================================================================
-                       6. EXEMPLO DE EXECUÇÃO
-================================================================================
+### 5.4 Estruturas de Controle
 
+**LOOP FOR:**
+- Usado para iterar um número determinado de vezes
+- `for i in range(n):` itera de 0 até n-1
+- `for nome, notas in dados_alunos.items():` itera sobre o dicionário
+
+**CONDICIONAL IF-ELIF-ELSE:**
+- Permite executar blocos de código baseado em condições
+- `if`: primeira condição
+- `elif`: condições alternativas
+- `else`: caso nenhuma condição anterior seja verdadeira
+
+### 5.5 Funções de Entrada/Saída
+
+**input(mensagem):**
+- Lê dados do teclado
+- Retorna sempre uma string
+- Deve ser convertido: `int(input(...))` ou `float(input(...))`
+
+**print(valor):**
+- Exibe dados na tela
+- f-strings permitem formatação: `f"Média: {media:.2f}"`
+
+---
+
+## 6. Exemplo de Execução
+
+```
 ==================================================
    SISTEMA DE GERENCIAMENTO DE NOTAS DE ALUNOS
 ==================================================
@@ -351,26 +359,43 @@ Aprovados: 1
 Em Sub: 1
 Reprovados: 1
 ============================================================
+```
 
-================================================================================
-                          7. CONCLUSÃO
-================================================================================
+---
 
-Esta atividade demonstrou a aplicação prática dos seguintes conceitos de
-programação em Python:
+## 7. Como Executar
 
-  ✓ ALGORITMOS: Sequência lógica de passos para resolver o problema
-  ✓ FLUXOGRAMAS: Representação visual do algoritmo
-  ✓ VARIÁVEIS: Armazenamento de dados (inteiros, floats, strings)
-  ✓ OPERADORES: Aritméticos (+, /) e de comparação (>=, <)
-  ✓ ESTRUTURAS DE CONTROLE: Loops (for) e condicionais (if-elif-else)
-  ✓ ESTRUTURAS DE DADOS: Dicionários e listas
+```bash
+python sistema_notas.py
+```
 
-O programa desenvolvido é funcional, bem organizado e segue as boas práticas
-de programação, incluindo comentários explicativos e formatação clara da
-saída.
+---
 
-================================================================================
-                        FIM DO DOCUMENTO
-================================================================================
+## 8. Conclusão
+
+Esta atividade demonstrou a aplicação prática dos seguintes conceitos de programação em Python:
+
+- ✅ **ALGORITMOS:** Sequência lógica de passos para resolver o problema
+- ✅ **FLUXOGRAMAS:** Representação visual do algoritmo
+- ✅ **VARIÁVEIS:** Armazenamento de dados (inteiros, floats, strings)
+- ✅ **OPERADORES:** Aritméticos (+, /) e de comparação (>=, <)
+- ✅ **ESTRUTURAS DE CONTROLE:** Loops (for) e condicionais (if-elif-else)
+- ✅ **ESTRUTURAS DE DADOS:** Dicionários e listas
+
+O programa desenvolvido é funcional, bem organizado e segue as boas práticas de programação, incluindo comentários explicativos e formatação clara da saída.
+
+---
+
+## 📁 Arquivos do Projeto
+
+| Arquivo | Descrição |
+|---------|-----------|
+| `sistema_notas.py` | Código fonte executável |
+| `Documento_Atividade.txt` | Documentação completa em texto |
+| `README.md` | Este arquivo |
+
+---
+
+**Autor:** Joabe Nascimento  
+**Email:** joabefnascimento1@outlook.com
 
